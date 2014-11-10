@@ -122,7 +122,7 @@
     THSpaceCatNode *spaceCat = (THSpaceCatNode*) [self childNodeWithName:@"SpaceCat"];
     THMachineNode *machine = (THMachineNode*) [self childNodeWithName:@"Machine"];
     [self runAction:self.explodeSFX];
-    [self createDebrisAtPosition:CGPointMake(spaceCat.position.x, spaceCat.position.y+10)];
+    [self createGoreAtPosition:CGPointMake(spaceCat.position.x, spaceCat.position.y+10) type:3];
     [self createDebrisAtPosition:CGPointMake(machine.position.x, machine.position.y+10)];
     [spaceCat removeFromParent];
     [machine removeFromParent];
@@ -154,6 +154,7 @@
     NSUInteger randomSpaceDog = [THUtil randomWithMin:0 max:2];
     
     THSpaceDogNode *spaceDog = [THSpaceDogNode spaceDogOfType:randomSpaceDog];
+    
     float dy = [THUtil randomWithMin:THSpaceDogMinSpeed max:THSpaceDogMaxSpeed];
     spaceDog.physicsBody.velocity = CGVectorMake(0, dy);
     float y = self.frame.size.height + spaceDog.size.height;
@@ -207,8 +208,9 @@
         secondBody = contact.bodyA;
     }
     
+    int goreType;
     
-    if (firstBody.categoryBitMask == THCollisionCategoryEnemy &&
+    if (firstBody.categoryBitMask == THCollisionCategorySpaceDogA &&
         secondBody.categoryBitMask == THCollisionCategoryProjectile) {
         
         THSpaceDogNode *spaceDog = (THSpaceDogNode*) firstBody.node;
@@ -218,22 +220,53 @@
         
         [self runAction:self.explodeSFX];
         
+        goreType = 2;
+        
         [spaceDog removeFromParent];
         [projectile removeFromParent];
         
-    } else if (firstBody.categoryBitMask == THCollisionCategoryEnemy &&
+    } else if (firstBody.categoryBitMask == THCollisionCategorySpaceDogB &&
+               secondBody.categoryBitMask == THCollisionCategoryProjectile) {
+        
+        THSpaceDogNode *spaceDog = (THSpaceDogNode*) firstBody.node;
+        THProjectileNode *projectile = (THProjectileNode*) secondBody.node;
+        
+        [self addPoints:THPointsPerHit];
+        
+        [self runAction:self.explodeSFX];
+        
+        goreType = 1;
+        
+        [spaceDog removeFromParent];
+        [projectile removeFromParent];
+        
+    } else if (firstBody.categoryBitMask == THCollisionCategorySpaceDogA &&
                secondBody.categoryBitMask == THCollisionCategoryGround) {
         
         THSpaceDogNode *spaceDog = (THSpaceDogNode*) firstBody.node;
 
         [self runAction:self.damageSFX];
         
+        goreType = 2;
+        
+        [spaceDog removeFromParent];
+        
+        [self loseLife];
+    } else if (firstBody.categoryBitMask == THCollisionCategorySpaceDogB &&
+               secondBody.categoryBitMask == THCollisionCategoryGround) {
+        
+        THSpaceDogNode *spaceDog = (THSpaceDogNode*) firstBody.node;
+        
+        [self runAction:self.damageSFX];
+        
+        goreType = 1;
+        
         [spaceDog removeFromParent];
         
         [self loseLife];
     }
-    
-        [self createDebrisAtPosition:contact.contactPoint];
+    [self createGoreAtPosition:contact.contactPoint type:goreType];
+    [self createDebrisAtPosition:contact.contactPoint];
 }
 
 - (void) addPoints:(NSInteger)points {
@@ -278,6 +311,40 @@
     [explosion runAction:[SKAction waitForDuration:2.0] completion:^{
         [explosion removeFromParent];
      }];
+}
+
+- (void) createGoreAtPosition:(CGPoint)position type:(int)type {
+    NSInteger numberOfPieces = [THUtil randomWithMin:4 max:9];
+    
+    for (int i=0; i < numberOfPieces; i++) {
+        NSInteger randomPiece = [THUtil randomWithMin:1 max:3];
+        NSString *imageName;
+        
+        if (type == 1) {
+            imageName = [NSString stringWithFormat:@"PinkDogGore%d", randomPiece];
+        } else if (type == 2) {
+            imageName = [NSString stringWithFormat:@"GreenDogGore%d", randomPiece];
+        } else if (type == 3) {
+            imageName = [NSString stringWithFormat:@"CatGore%d", randomPiece];
+        }
+        
+        SKSpriteNode *gore = [SKSpriteNode spriteNodeWithImageNamed:imageName];
+        gore.position = position;
+        [self addChild:gore];
+        gore.name = @"Gore";
+        gore.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:gore.frame.size];
+        gore.physicsBody.categoryBitMask = THCollisionCategoryDebris;
+        gore.physicsBody.collisionBitMask = THCollisionCategoryGround | THCollisionCategoryDebris;
+        
+        
+        gore.physicsBody.velocity = CGVectorMake([THUtil randomWithMin:-150 max:150],
+                                                   [THUtil randomWithMin:150 max:350]);
+        [gore runAction:[SKAction waitForDuration:2.0] completion:^{
+            [gore runAction:[SKAction fadeAlphaTo:0 duration:0.1] completion:^{
+                [gore removeFromParent];
+            }];
+        }];
+    }
 }
 
 @end

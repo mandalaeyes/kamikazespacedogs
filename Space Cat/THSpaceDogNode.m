@@ -15,17 +15,21 @@
     THSpaceDogNode *spaceDog;
     
     NSArray *textures;
+    int goreType;
     
     if (type == THSpaceDogTypeA) {
         spaceDog = [self spriteNodeWithImageNamed:@"NakedDog1"];
         textures = @[[SKTexture textureWithImageNamed:@"NakedDog1"],
                      [SKTexture textureWithImageNamed:@"NakedDog2"],
                      [SKTexture textureWithImageNamed:@"NakedDog3"]];
+        goreType = 1;
+
     } else {
         spaceDog = [self spriteNodeWithImageNamed:@"SaucerDog1"];
         textures = @[[SKTexture textureWithImageNamed:@"SaucerDog1"],
                      [SKTexture textureWithImageNamed:@"SaucerDog2"],
                      [SKTexture textureWithImageNamed:@"SaucerDog3"]];
+        goreType = 2;
     }
     
     float scale = [THUtil randomWithMin:85 max:100] / 100.0f;
@@ -35,16 +39,20 @@
     SKAction *animation = [SKAction animateWithTextures:textures timePerFrame:0.1];
     [spaceDog runAction:[SKAction repeatActionForever:animation]];
     
-    [spaceDog setupPhysicsBody];
+    [spaceDog setupPhysicsBodyOfType:goreType];
     
     return spaceDog;
 }
 
-- (void) setupPhysicsBody {
+- (void) setupPhysicsBodyOfType:(int)type {
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
     self.physicsBody.affectedByGravity = NO;
-    self.physicsBody.categoryBitMask = THCollisionCategoryEnemy;
     self.physicsBody.collisionBitMask = 0;
+    if (type == 1) {
+        self.physicsBody.categoryBitMask = THCollisionCategorySpaceDogA;
+    } else {
+        self.physicsBody.categoryBitMask = THCollisionCategorySpaceDogB;
+    }
     self.physicsBody.contactTestBitMask = THCollisionCategoryProjectile | THCollisionCategoryGround;
 }
 

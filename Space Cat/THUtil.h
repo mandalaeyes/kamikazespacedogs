@@ -15,10 +15,11 @@ static const int THMaxLives = 1;
 static const int THPointsPerHit = 100;
 
 typedef NS_OPTIONS(uint32_t, THCollisionCategory) {
-    THCollisionCategoryEnemy        = 1 << 0,
-    THCollisionCategoryProjectile   = 1 << 1,
-    THCollisionCategoryDebris       = 1 << 2,
-    THCollisionCategoryGround       = 1 << 3
+    THCollisionCategorySpaceDogA    = 1 << 0,
+    THCollisionCategorySpaceDogB    = 1 << 1,
+    THCollisionCategoryProjectile   = 1 << 2,
+    THCollisionCategoryDebris       = 1 << 3,
+    THCollisionCategoryGround       = 1 << 4
 };
 
 @interface THUtil : NSObject

@@ -26,7 +26,7 @@
     self.physicsBody.dynamic = NO;
     self.physicsBody.categoryBitMask = THCollisionCategoryGround;
     self.physicsBody.collisionBitMask = THCollisionCategoryDebris;
-    self.physicsBody.contactTestBitMask = THCollisionCategoryEnemy;
+    self.physicsBody.contactTestBitMask = THCollisionCategorySpaceDogA;
 }
 
 @end

@@ -10,31 +10,31 @@
 	<string>Space Cat</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C452AB48-31ED-499F-A072-D7DA7B20434C</key>
-		<string>ssh://github.com/treehouse/ios-projects.git</string>
+		<key>2B22B4FA7CA9708C307CB6CC6E23BE7999013AD3</key>
+		<string>https://github.com/mandalaeyes/kamikazespacedogs.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Space Cat/Space Cat.xcodeproj/project.xcworkspace</string>
+	<string>Space Cat.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C452AB48-31ED-499F-A072-D7DA7B20434C</key>
-		<string>../../..</string>
+		<key>2B22B4FA7CA9708C307CB6CC6E23BE7999013AD3</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/treehouse/ios-projects.git</string>
+	<string>https://github.com/mandalaeyes/kamikazespacedogs.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C452AB48-31ED-499F-A072-D7DA7B20434C</string>
+	<string>2B22B4FA7CA9708C307CB6CC6E23BE7999013AD3</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C452AB48-31ED-499F-A072-D7DA7B20434C</string>
+			<string>2B22B4FA7CA9708C307CB6CC6E23BE7999013AD3</string>
 			<key>IDESourceControlWCCName</key>
-			<string>ios-projects</string>
+			<string>Space%20Cat</string>
 		</dict>
 	</array>
 </dict>

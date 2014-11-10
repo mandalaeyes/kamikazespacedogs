@@ -74,7 +74,7 @@
     self.physicsBody.affectedByGravity = NO;
     self.physicsBody.categoryBitMask = THCollisionCategoryProjectile;
     self.physicsBody.collisionBitMask = 0;
-    self.physicsBody.contactTestBitMask = THCollisionCategoryEnemy;
+    self.physicsBody.contactTestBitMask = THCollisionCategorySpaceDogA | THCollisionCategorySpaceDogB;
 }
 
 @end
