@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		264427ED1A0E92EE00E541F2 /* THMachineNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 264427EC1A0E92EE00E541F2 /* THMachineNode.m */; };
+		264427F01A0E9A3900E541F2 /* THSpaceCatNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 264427EF1A0E9A3900E541F2 /* THSpaceCatNode.m */; };
+		264427F31A0EA50700E541F2 /* THProjectileNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 264427F21A0EA50700E541F2 /* THProjectileNode.m */; };
+		264427F71A0EC3C300E541F2 /* THUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 264427F61A0EC3C300E541F2 /* THUtil.m */; };
+		264427FA1A0ECDE200E541F2 /* THSpaceDogNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 264427F91A0ECDE200E541F2 /* THSpaceDogNode.m */; };
+		264427FD1A0ED69400E541F2 /* THGroundNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 264427FC1A0ED69400E541F2 /* THGroundNode.m */; };
+		264428031A0F1D8100E541F2 /* Explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 264427FF1A0F1D8100E541F2 /* Explosion.wav */; };
+		264428041A0F1D8100E541F2 /* Hurt.wav in Resources */ = {isa = PBXBuildFile; fileRef = 264428001A0F1D8100E541F2 /* Hurt.wav */; };
+		264428061A0F1D8100E541F2 /* Shoot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 264428021A0F1D8100E541F2 /* Shoot.wav */; };
+		264428081A0F1EA700E541F2 /* PressStart.wav in Resources */ = {isa = PBXBuildFile; fileRef = 264428071A0F1EA700E541F2 /* PressStart.wav */; };
+		2644280A1A0F228400E541F2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264428091A0F228400E541F2 /* AVFoundation.framework */; };
+		2644281A1A0F240200E541F2 /* Gameover.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264428171A0F240200E541F2 /* Gameover.mp3 */; };
+		2644281B1A0F240200E541F2 /* Gameplay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264428181A0F240200E541F2 /* Gameplay.mp3 */; };
+		2644281C1A0F240200E541F2 /* TitleScreen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 264428191A0F240200E541F2 /* TitleScreen.mp3 */; };
+		2644281F1A0F301F00E541F2 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2644281D1A0F301F00E541F2 /* Explosion.sks */; };
+		264428201A0F301F00E541F2 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2644281E1A0F301F00E541F2 /* spark.png */; };
+		264428231A0F3CBB00E541F2 /* THHudNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 264428221A0F3CBB00E541F2 /* THHudNode.m */; };
+		266015651A0DA96700B6E42F /* THTitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 266015641A0DA96700B6E42F /* THTitleScene.m */; };
+		266015681A0DB1F700B6E42F /* THGameplayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 266015671A0DB1F700B6E42F /* THGameplayScene.m */; };
+		2660156A1A0DC08500B6E42F /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 266015691A0DC08500B6E42F /* Sprites.atlas */; };
+		267301211A10078E00F10A4A /* THGameOverNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 267301201A10078E00F10A4A /* THGameOverNode.m */; };
+		B3D59125192176DE00198E96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59124192176DE00198E96 /* Foundation.framework */; };
+		B3D59127192176DE00198E96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59126192176DE00198E96 /* CoreGraphics.framework */; };
+		B3D59129192176DE00198E96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59128192176DE00198E96 /* UIKit.framework */; };
+		B3D5912B192176DE00198E96 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D5912A192176DE00198E96 /* SpriteKit.framework */; };
+		B3D59131192176DE00198E96 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3D5912F192176DE00198E96 /* InfoPlist.strings */; };
+		B3D59133192176DE00198E96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D59132192176DE00198E96 /* main.m */; };
+		B3D59137192176DE00198E96 /* THAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D59136192176DE00198E96 /* THAppDelegate.m */; };
+		B3D5913A192176DE00198E96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3D59138192176DE00198E96 /* Main.storyboard */; };
+		B3D5913D192176DE00198E96 /* THViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D5913C192176DE00198E96 /* THViewController.m */; };
+		B3D59144192176DE00198E96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D59143192176DE00198E96 /* Images.xcassets */; };
+		B3D5914B192176DF00198E96 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D5914A192176DF00198E96 /* XCTest.framework */; };
+		B3D5914C192176DF00198E96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59124192176DE00198E96 /* Foundation.framework */; };
+		B3D5914D192176DF00198E96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D59128192176DE00198E96 /* UIKit.framework */; };
+		B3D59155192176DF00198E96 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3D59153192176DF00198E96 /* InfoPlist.strings */; };
+		B3D59157192176DF00198E96 /* Space_CatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D59156192176DF00198E96 /* Space_CatTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B3D5914E192176DF00198E96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3D59119192176DE00198E96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3D59120192176DE00198E96;
+			remoteInfo = "Space Cat";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		264427EB1A0E92EE00E541F2 /* THMachineNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THMachineNode.h; sourceTree = "<group>"; };
+		264427EC1A0E92EE00E541F2 /* THMachineNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THMachineNode.m; sourceTree = "<group>"; };
+		264427EE1A0E9A3900E541F2 /* THSpaceCatNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THSpaceCatNode.h; sourceTree = "<group>"; };
+		264427EF1A0E9A3900E541F2 /* THSpaceCatNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THSpaceCatNode.m; sourceTree = "<group>"; };
+		264427F11A0EA50700E541F2 /* THProjectileNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THProjectileNode.h; sourceTree = "<group>"; };
+		264427F21A0EA50700E541F2 /* THProjectileNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THProjectileNode.m; sourceTree = "<group>"; };
+		264427F51A0EC3C300E541F2 /* THUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THUtil.h; sourceTree = "<group>"; };
+		264427F61A0EC3C300E541F2 /* THUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THUtil.m; sourceTree = "<group>"; };
+		264427F81A0ECDE200E541F2 /* THSpaceDogNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THSpaceDogNode.h; sourceTree = "<group>"; };
+		264427F91A0ECDE200E541F2 /* THSpaceDogNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THSpaceDogNode.m; sourceTree = "<group>"; };
+		264427FB1A0ED69400E541F2 /* THGroundNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THGroundNode.h; sourceTree = "<group>"; };
+		264427FC1A0ED69400E541F2 /* THGroundNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THGroundNode.m; sourceTree = "<group>"; };
+		264427FF1A0F1D8100E541F2 /* Explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Explosion.wav; sourceTree = "<group>"; };
+		264428001A0F1D8100E541F2 /* Hurt.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Hurt.wav; sourceTree = "<group>"; };
+		264428021A0F1D8100E541F2 /* Shoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Shoot.wav; sourceTree = "<group>"; };
+		264428071A0F1EA700E541F2 /* PressStart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PressStart.wav; sourceTree = "<group>"; };
+		264428091A0F228400E541F2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		264428171A0F240200E541F2 /* Gameover.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Gameover.mp3; sourceTree = "<group>"; };
+		264428181A0F240200E541F2 /* Gameplay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Gameplay.mp3; sourceTree = "<group>"; };
+		264428191A0F240200E541F2 /* TitleScreen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TitleScreen.mp3; sourceTree = "<group>"; };
+		2644281D1A0F301F00E541F2 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
+		2644281E1A0F301F00E541F2 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		264428211A0F3CBB00E541F2 /* THHudNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THHudNode.h; sourceTree = "<group>"; };
+		264428221A0F3CBB00E541F2 /* THHudNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THHudNode.m; sourceTree = "<group>"; };
+		266015631A0DA96700B6E42F /* THTitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THTitleScene.h; sourceTree = "<group>"; };
+		266015641A0DA96700B6E42F /* THTitleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THTitleScene.m; sourceTree = "<group>"; };
+		266015661A0DB1F700B6E42F /* THGameplayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THGameplayScene.h; sourceTree = "<group>"; };
+		266015671A0DB1F700B6E42F /* THGameplayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THGameplayScene.m; sourceTree = "<group>"; };
+		266015691A0DC08500B6E42F /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
+		2673011F1A10078E00F10A4A /* THGameOverNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THGameOverNode.h; sourceTree = "<group>"; };
+		267301201A10078E00F10A4A /* THGameOverNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THGameOverNode.m; sourceTree = "<group>"; };
+		B3D59121192176DE00198E96 /* Space Cat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Cat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3D59124192176DE00198E96 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B3D59126192176DE00198E96 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B3D59128192176DE00198E96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B3D5912A192176DE00198E96 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		B3D5912E192176DE00198E96 /* Space Cat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Space Cat-Info.plist"; sourceTree = "<group>"; };
+		B3D59130192176DE00198E96 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B3D59132192176DE00198E96 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B3D59134192176DE00198E96 /* Space Cat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Space Cat-Prefix.pch"; sourceTree = "<group>"; };
+		B3D59135192176DE00198E96 /* THAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THAppDelegate.h; sourceTree = "<group>"; };
+		B3D59136192176DE00198E96 /* THAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THAppDelegate.m; sourceTree = "<group>"; };
+		B3D59139192176DE00198E96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B3D5913B192176DE00198E96 /* THViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THViewController.h; sourceTree = "<group>"; };
+		B3D5913C192176DE00198E96 /* THViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THViewController.m; sourceTree = "<group>"; };
+		B3D59143192176DE00198E96 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B3D59149192176DF00198E96 /* Space CatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space CatTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3D5914A192176DF00198E96 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B3D59152192176DF00198E96 /* Space CatTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Space CatTests-Info.plist"; sourceTree = "<group>"; };
+		B3D59154192176DF00198E96 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B3D59156192176DF00198E96 /* Space_CatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Space_CatTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B3D5911E192176DE00198E96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2644280A1A0F228400E541F2 /* AVFoundation.framework in Frameworks */,
+				B3D59127192176DE00198E96 /* CoreGraphics.framework in Frameworks */,
+				B3D59129192176DE00198E96 /* UIKit.framework in Frameworks */,
+				B3D5912B192176DE00198E96 /* SpriteKit.framework in Frameworks */,
+				B3D59125192176DE00198E96 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3D59146192176DF00198E96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3D5914B192176DF00198E96 /* XCTest.framework in Frameworks */,
+				B3D5914D192176DF00198E96 /* UIKit.framework in Frameworks */,
+				B3D5914C192176DF00198E96 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		264427FE1A0F1D2B00E541F2 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				264428171A0F240200E541F2 /* Gameover.mp3 */,
+				264428181A0F240200E541F2 /* Gameplay.mp3 */,
+				264428191A0F240200E541F2 /* TitleScreen.mp3 */,
+				264427FF1A0F1D8100E541F2 /* Explosion.wav */,
+				264428001A0F1D8100E541F2 /* Hurt.wav */,
+				264428071A0F1EA700E541F2 /* PressStart.wav */,
+				264428021A0F1D8100E541F2 /* Shoot.wav */,
+			);
+			name = Sound;
+			sourceTree = "<group>";
+		};
+		B3D59118192176DE00198E96 = {
+			isa = PBXGroup;
+			children = (
+				B3D5912C192176DE00198E96 /* Space Cat */,
+				B3D59150192176DF00198E96 /* Space CatTests */,
+				B3D59123192176DE00198E96 /* Frameworks */,
+				B3D59122192176DE00198E96 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B3D59122192176DE00198E96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3D59121192176DE00198E96 /* Space Cat.app */,
+				B3D59149192176DF00198E96 /* Space CatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B3D59123192176DE00198E96 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				264428091A0F228400E541F2 /* AVFoundation.framework */,
+				B3D59124192176DE00198E96 /* Foundation.framework */,
+				B3D59126192176DE00198E96 /* CoreGraphics.framework */,
+				B3D59128192176DE00198E96 /* UIKit.framework */,
+				B3D5912A192176DE00198E96 /* SpriteKit.framework */,
+				B3D5914A192176DF00198E96 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3D5912C192176DE00198E96 /* Space Cat */ = {
+			isa = PBXGroup;
+			children = (
+				264427FE1A0F1D2B00E541F2 /* Sound */,
+				B3D59138192176DE00198E96 /* Main.storyboard */,
+				266015631A0DA96700B6E42F /* THTitleScene.h */,
+				266015641A0DA96700B6E42F /* THTitleScene.m */,
+				266015661A0DB1F700B6E42F /* THGameplayScene.h */,
+				266015671A0DB1F700B6E42F /* THGameplayScene.m */,
+				2673011F1A10078E00F10A4A /* THGameOverNode.h */,
+				267301201A10078E00F10A4A /* THGameOverNode.m */,
+				264428211A0F3CBB00E541F2 /* THHudNode.h */,
+				264428221A0F3CBB00E541F2 /* THHudNode.m */,
+				264427F81A0ECDE200E541F2 /* THSpaceDogNode.h */,
+				264427F91A0ECDE200E541F2 /* THSpaceDogNode.m */,
+				264427EE1A0E9A3900E541F2 /* THSpaceCatNode.h */,
+				264427EF1A0E9A3900E541F2 /* THSpaceCatNode.m */,
+				264427F11A0EA50700E541F2 /* THProjectileNode.h */,
+				264427F21A0EA50700E541F2 /* THProjectileNode.m */,
+				264427EB1A0E92EE00E541F2 /* THMachineNode.h */,
+				264427EC1A0E92EE00E541F2 /* THMachineNode.m */,
+				264427FB1A0ED69400E541F2 /* THGroundNode.h */,
+				264427FC1A0ED69400E541F2 /* THGroundNode.m */,
+				264427F51A0EC3C300E541F2 /* THUtil.h */,
+				264427F61A0EC3C300E541F2 /* THUtil.m */,
+				2644281D1A0F301F00E541F2 /* Explosion.sks */,
+				2644281E1A0F301F00E541F2 /* spark.png */,
+				B3D59143192176DE00198E96 /* Images.xcassets */,
+				266015691A0DC08500B6E42F /* Sprites.atlas */,
+				B3D5912D192176DE00198E96 /* Supporting Files */,
+			);
+			path = "Space Cat";
+			sourceTree = "<group>";
+		};
+		B3D5912D192176DE00198E96 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B3D59135192176DE00198E96 /* THAppDelegate.h */,
+				B3D59136192176DE00198E96 /* THAppDelegate.m */,
+				B3D5913B192176DE00198E96 /* THViewController.h */,
+				B3D5913C192176DE00198E96 /* THViewController.m */,
+				B3D5912E192176DE00198E96 /* Space Cat-Info.plist */,
+				B3D5912F192176DE00198E96 /* InfoPlist.strings */,
+				B3D59132192176DE00198E96 /* main.m */,
+				B3D59134192176DE00198E96 /* Space Cat-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B3D59150192176DF00198E96 /* Space CatTests */ = {
+			isa = PBXGroup;
+			children = (
+				B3D59156192176DF00198E96 /* Space_CatTests.m */,
+				B3D59151192176DF00198E96 /* Supporting Files */,
+			);
+			path = "Space CatTests";
+			sourceTree = "<group>";
+		};
+		B3D59151192176DF00198E96 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B3D59152192176DF00198E96 /* Space CatTests-Info.plist */,
+				B3D59153192176DF00198E96 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B3D59120192176DE00198E96 /* Space Cat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3D5915A192176DF00198E96 /* Build configuration list for PBXNativeTarget "Space Cat" */;
+			buildPhases = (
+				B3D5911D192176DE00198E96 /* Sources */,
+				B3D5911E192176DE00198E96 /* Frameworks */,
+				B3D5911F192176DE00198E96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Space Cat";
+			productName = "Space Cat";
+			productReference = B3D59121192176DE00198E96 /* Space Cat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B3D59148192176DF00198E96 /* Space CatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3D5915D192176DF00198E96 /* Build configuration list for PBXNativeTarget "Space CatTests" */;
+			buildPhases = (
+				B3D59145192176DF00198E96 /* Sources */,
+				B3D59146192176DF00198E96 /* Frameworks */,
+				B3D59147192176DF00198E96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3D5914F192176DF00198E96 /* PBXTargetDependency */,
+			);
+			name = "Space CatTests";
+			productName = "Space CatTests";
+			productReference = B3D59149192176DF00198E96 /* Space CatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B3D59119192176DE00198E96 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TH;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Treehouse;
+				TargetAttributes = {
+					B3D59148192176DF00198E96 = {
+						TestTargetID = B3D59120192176DE00198E96;
+					};
+				};
+			};
+			buildConfigurationList = B3D5911C192176DE00198E96 /* Build configuration list for PBXProject "Space Cat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B3D59118192176DE00198E96;
+			productRefGroup = B3D59122192176DE00198E96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B3D59120192176DE00198E96 /* Space Cat */,
+				B3D59148192176DF00198E96 /* Space CatTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B3D5911F192176DE00198E96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2644281B1A0F240200E541F2 /* Gameplay.mp3 in Resources */,
+				B3D59131192176DE00198E96 /* InfoPlist.strings in Resources */,
+				264428041A0F1D8100E541F2 /* Hurt.wav in Resources */,
+				2644281A1A0F240200E541F2 /* Gameover.mp3 in Resources */,
+				264428061A0F1D8100E541F2 /* Shoot.wav in Resources */,
+				264428201A0F301F00E541F2 /* spark.png in Resources */,
+				2644281F1A0F301F00E541F2 /* Explosion.sks in Resources */,
+				2644281C1A0F240200E541F2 /* TitleScreen.mp3 in Resources */,
+				264428081A0F1EA700E541F2 /* PressStart.wav in Resources */,
+				B3D59144192176DE00198E96 /* Images.xcassets in Resources */,
+				2660156A1A0DC08500B6E42F /* Sprites.atlas in Resources */,
+				B3D5913A192176DE00198E96 /* Main.storyboard in Resources */,
+				264428031A0F1D8100E541F2 /* Explosion.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3D59147192176DF00198E96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3D59155192176DF00198E96 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B3D5911D192176DE00198E96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				264427F31A0EA50700E541F2 /* THProjectileNode.m in Sources */,
+				B3D5913D192176DE00198E96 /* THViewController.m in Sources */,
+				264427F71A0EC3C300E541F2 /* THUtil.m in Sources */,
+				267301211A10078E00F10A4A /* THGameOverNode.m in Sources */,
+				266015681A0DB1F700B6E42F /* THGameplayScene.m in Sources */,
+				B3D59137192176DE00198E96 /* THAppDelegate.m in Sources */,
+				264428231A0F3CBB00E541F2 /* THHudNode.m in Sources */,
+				B3D59133192176DE00198E96 /* main.m in Sources */,
+				266015651A0DA96700B6E42F /* THTitleScene.m in Sources */,
+				264427ED1A0E92EE00E541F2 /* THMachineNode.m in Sources */,
+				264427F01A0E9A3900E541F2 /* THSpaceCatNode.m in Sources */,
+				264427FD1A0ED69400E541F2 /* THGroundNode.m in Sources */,
+				264427FA1A0ECDE200E541F2 /* THSpaceDogNode.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3D59145192176DF00198E96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3D59157192176DF00198E96 /* Space_CatTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B3D5914F192176DF00198E96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3D59120192176DE00198E96 /* Space Cat */;
+			targetProxy = B3D5914E192176DF00198E96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B3D5912F192176DE00198E96 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3D59130192176DE00198E96 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B3D59138192176DE00198E96 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3D59139192176DE00198E96 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B3D59153192176DF00198E96 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3D59154192176DF00198E96 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B3D59158192176DF00198E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B3D59159192176DF00198E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B3D5915B192176DF00198E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Space Cat/Space Cat-Prefix.pch";
+				INFOPLIST_FILE = "Space Cat/Space Cat-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B3D5915C192176DF00198E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Space Cat/Space Cat-Prefix.pch";
+				INFOPLIST_FILE = "Space Cat/Space Cat-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B3D5915E192176DF00198E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Space Cat.app/Space Cat";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Space Cat/Space Cat-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Space CatTests/Space CatTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		B3D5915F192176DF00198E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Space Cat.app/Space Cat";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Space Cat/Space Cat-Prefix.pch";
+				INFOPLIST_FILE = "Space CatTests/Space CatTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B3D5911C192176DE00198E96 /* Build configuration list for PBXProject "Space Cat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3D59158192176DF00198E96 /* Debug */,
+				B3D59159192176DF00198E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3D5915A192176DF00198E96 /* Build configuration list for PBXNativeTarget "Space Cat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3D5915B192176DF00198E96 /* Debug */,
+				B3D5915C192176DF00198E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3D5915D192176DF00198E96 /* Build configuration list for PBXNativeTarget "Space CatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3D5915E192176DF00198E96 /* Debug */,
+				B3D5915F192176DF00198E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B3D59119192176DE00198E96 /* Project object */;
+}
