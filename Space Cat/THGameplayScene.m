@@ -123,7 +123,7 @@
     THMachineNode *machine = (THMachineNode*) [self childNodeWithName:@"Machine"];
     [self runAction:self.explodeSFX];
     [self createGoreAtPosition:CGPointMake(spaceCat.position.x, spaceCat.position.y+10) type:3];
-    [self createDebrisAtPosition:CGPointMake(machine.position.x, machine.position.y+10)];
+    [self createDebrisAtPosition:CGPointMake(machine.position.x, machine.position.y+10) type:3];
     [spaceCat removeFromParent];
     [machine removeFromParent];
     
@@ -208,7 +208,7 @@
         secondBody = contact.bodyA;
     }
     
-    int goreType;
+    int debrisType;
     
     if (firstBody.categoryBitMask == THCollisionCategorySpaceDogA &&
         secondBody.categoryBitMask == THCollisionCategoryProjectile) {
@@ -220,7 +220,7 @@
         
         [self runAction:self.explodeSFX];
         
-        goreType = 2;
+        debrisType = 1;
         
         [spaceDog removeFromParent];
         [projectile removeFromParent];
@@ -235,7 +235,7 @@
         
         [self runAction:self.explodeSFX];
         
-        goreType = 1;
+        debrisType = 2;
         
         [spaceDog removeFromParent];
         [projectile removeFromParent];
@@ -247,7 +247,7 @@
 
         [self runAction:self.damageSFX];
         
-        goreType = 2;
+        debrisType = 1;
         
         [spaceDog removeFromParent];
         
@@ -259,14 +259,14 @@
         
         [self runAction:self.damageSFX];
         
-        goreType = 1;
+        debrisType = 2;
         
         [spaceDog removeFromParent];
         
         [self loseLife];
     }
-    [self createGoreAtPosition:contact.contactPoint type:goreType];
-    [self createDebrisAtPosition:contact.contactPoint];
+    [self createGoreAtPosition:contact.contactPoint type:debrisType];
+    [self createDebrisAtPosition:contact.contactPoint type:debrisType];
 }
 
 - (void) addPoints:(NSInteger)points {
@@ -279,29 +279,52 @@
     self.gameOver = [hud loseLife];
 }
 
-- (void) createDebrisAtPosition:(CGPoint)position {
-    NSInteger numberOfPieces = [THUtil randomWithMin:5 max:10];
+- (void) createDebrisAtPosition:(CGPoint)position type:(int)type {
+    NSInteger numberOfPieces;
+    
+    if (type == 1) {
+        numberOfPieces = [THUtil randomWithMin:2 max:5];
+    } else {
+        numberOfPieces = [THUtil randomWithMin:5 max:10];
+    }
     
     for (int i=0; i < numberOfPieces; i++) {
         NSInteger randomPiece = [THUtil randomWithMin:1 max:4];
-        NSString *imageName = [NSString stringWithFormat:@"debri_%d", randomPiece];
+        NSString *imageName;
+        
+        if (type ==1) {
+            imageName = @"debri_1";
+        } else if (type == 2) {
+            imageName = [NSString stringWithFormat:@"debri_%d", randomPiece];
+        } else {
+            imageName = [NSString stringWithFormat:@"MachineDebris%d", randomPiece];
+        }
         
         SKSpriteNode *debris = [SKSpriteNode spriteNodeWithImageNamed:imageName];
         debris.position = position;
         [self addChild:debris];
         debris.name = @"Debris";
         debris.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:debris.frame.size];
+        
+        // Subtly randomize debris size
+        float scale = [THUtil randomWithMin:85 max:100] / 100.0f;
+        debris.xScale = scale;
+        debris.yScale = scale;
+        
         debris.physicsBody.categoryBitMask = THCollisionCategoryDebris;
         debris.physicsBody.collisionBitMask = THCollisionCategoryGround | THCollisionCategoryDebris;
 
         
         debris.physicsBody.velocity = CGVectorMake([THUtil randomWithMin:-150 max:150],
-                                                   [THUtil randomWithMin:150 max:350]);
-        [debris runAction:[SKAction waitForDuration:2.0] completion:^{
-            [debris runAction:[SKAction fadeAlphaTo:0 duration:0.1] completion:^{
-                [debris removeFromParent];
+                                                   [THUtil randomWithMin:200 max:350]);
+        if (type == 3) {
+        } else {
+            [debris runAction:[SKAction waitForDuration:2.0] completion:^{
+                [debris runAction:[SKAction fadeAlphaTo:0 duration:0.1] completion:^{
+                    [debris removeFromParent];
+                }];
             }];
-        }];
+        }
     }
     
     NSString *explosionPath = [[NSBundle mainBundle] pathForResource:@"Explosion" ofType:@"sks"];
@@ -317,13 +340,14 @@
     NSInteger numberOfPieces = [THUtil randomWithMin:4 max:9];
     
     for (int i=0; i < numberOfPieces; i++) {
+        
         NSInteger randomPiece = [THUtil randomWithMin:1 max:3];
         NSString *imageName;
         
         if (type == 1) {
-            imageName = [NSString stringWithFormat:@"PinkDogGore%d", randomPiece];
-        } else if (type == 2) {
             imageName = [NSString stringWithFormat:@"GreenDogGore%d", randomPiece];
+        } else if (type == 2) {
+            imageName = [NSString stringWithFormat:@"PinkDogGore%d", randomPiece];
         } else if (type == 3) {
             imageName = [NSString stringWithFormat:@"CatGore%d", randomPiece];
         }
@@ -333,17 +357,26 @@
         [self addChild:gore];
         gore.name = @"Gore";
         gore.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:gore.frame.size];
+        
+        // Subtly randomize gore size
+        float scale = [THUtil randomWithMin:85 max:100] / 100.0f;
+        gore.xScale = scale;
+        gore.yScale = scale;
+        
         gore.physicsBody.categoryBitMask = THCollisionCategoryDebris;
         gore.physicsBody.collisionBitMask = THCollisionCategoryGround | THCollisionCategoryDebris;
         
         
-        gore.physicsBody.velocity = CGVectorMake([THUtil randomWithMin:-150 max:150],
-                                                   [THUtil randomWithMin:150 max:350]);
-        [gore runAction:[SKAction waitForDuration:2.0] completion:^{
-            [gore runAction:[SKAction fadeAlphaTo:0 duration:0.1] completion:^{
-                [gore removeFromParent];
+        gore.physicsBody.velocity = CGVectorMake([THUtil randomWithMin:-200 max:200],
+                                                   [THUtil randomWithMin:250 max:450]);
+        if (type == 3) {
+        } else {
+            [gore runAction:[SKAction waitForDuration:2.0] completion:^{
+                [gore runAction:[SKAction fadeAlphaTo:0 duration:0.1] completion:^{
+                    [gore removeFromParent];
+                }];
             }];
-        }];
+        }
     }
 }
 
